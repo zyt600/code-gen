@@ -41,7 +41,7 @@ def generate_cpp_code(filename):
                         cpp_file.write(f'    loggerOMnet->log(Level, "{field_name}: {{}}", item.{field_name});\n')
                     elif "char [" in field_type:
                         print("is char array",field_type)
-                        cpp_file.write(f'    loggerOMnet->log(Level, "{field_name}: {{}}", std::string(item.{field_name},sizeof(item.{field_name})).c_str();\n')
+                        cpp_file.write(f'    loggerOMnet->log(Level, "{field_name}: {{}}", std::string(item.{field_name},sizeof(item.{field_name})).c_str());\n')
                     else:
                         print("not basic type",field_type)
                         cpp_file.write(f"    print(item.{field_name});\n")
