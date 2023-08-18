@@ -28,9 +28,9 @@ def generate_cpp_code(filename):
                 if struct_name is None:
                     print("is none")
                     continue # skip unnamed structures
-                h_file.write(f'void print(const {struct_name}& item);\n')
+                h_file.write(f'static void print(const {struct_name}& item);\n')
                 cpp_file.write(f'void OMnetLogger::print(const {struct_name}& item) {{\n')
-                cpp_file.write(r'    loggerOMnet->log(Level,"{");')
+                cpp_file.write(r'    loggerOMnetAPI->log(Level,"{");')
                 cpp_file.write('\n')
                 for field in item.type.type.decls:
                     field_name = field.name
@@ -38,15 +38,15 @@ def generate_cpp_code(filename):
                     print(field_name, field_type)
                     if field_type in basic_types:
                         print("is basic type",field_type)
-                        cpp_file.write(f'    loggerOMnet->log(Level, "{field_name}: {{}}", item.{field_name});\n')
+                        cpp_file.write(f'    loggerOMnetAPI->log(Level, "{field_name}: {{}}", item.{field_name});\n')
                     elif "char [" in field_type:
                         print("is char array",field_type)
-                        cpp_file.write(f'    loggerOMnet->log(Level, "{field_name}: {{}}", std::string(item.{field_name},sizeof(item.{field_name})).c_str());\n')
+                        cpp_file.write(f'    loggerOMnetAPI->log(Level, "{field_name}: {{}}", std::string(item.{field_name},sizeof(item.{field_name})).c_str());\n')
                     else:
                         print("not basic type",field_type)
                         cpp_file.write(f"    print(item.{field_name});\n")
                     # cpp_file.write(f'    std::cout << "{field_name}: " << ptr->{field_name} << std::endl;\n')
-                cpp_file.write(r'    loggerOMnet->log(Level,"}");')
+                cpp_file.write(r'    loggerOMnetAPI->log(Level,"}");')
                 cpp_file.write("\n}\n\n")
                 # print(type_list)
 
