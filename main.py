@@ -1,5 +1,7 @@
-from pycparser import parse_file, c_generator
+from pycparser import parse_file, c_generator, c_ast
 import pycparser
+def is_array(declaration):
+    return isinstance(declaration.type, c_ast.ArrayDecl)
 
 def generate_cpp_code(filename):
     ast = parse_file(filename, use_cpp=True)
@@ -17,8 +19,8 @@ def generate_cpp_code(filename):
 
     with open("generated_code.cpp", "w") as cpp_file:
         h_file= open("generated_code.h", "w")
-        cpp_file.write("#include <iostream>\n")
-        cpp_file.write(f'#include "{filename}"\n\n')
+        # cpp_file.write("#include <iostream>\n")
+        # cpp_file.write(f'#include "{filename}"\n\n')
 
         for item in ast.ext:
             if isinstance(item, pycparser.c_ast.Typedef) and \
@@ -42,6 +44,11 @@ def generate_cpp_code(filename):
                     elif "char [" in field_type:
                         print("is char array",field_type)
                         cpp_file.write(f'    loggerOMnetAPI->log(Level, "{field_name}: {{}}", std::string(item.{field_name},sizeof(item.{field_name})).c_str());\n')
+                    elif is_array(field):
+                        print("is array",field_type)
+                        cpp_file.write(f"    for(int i=0; i<{field.type.dim.value}; i++){{\n")
+                        cpp_file.write(f"        print(item.{field_name}[i]);\n")
+                        cpp_file.write(f"    }}\n")
                     else:
                         print("not basic type",field_type)
                         cpp_file.write(f"    print(item.{field_name});\n")

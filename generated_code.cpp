@@ -1,4 +1,3 @@
-
 void OMnetLogger::print(const quad_word& item) {
     loggerOMnetAPI->log(Level,"{");
     loggerOMnetAPI->log(Level, "quad_word: {}", std::string(item.quad_word,sizeof(item.quad_word)).c_str());
@@ -620,7 +619,9 @@ void OMnetLogger::print(const da5_t& item) {
     loggerOMnetAPI->log(Level, "cbs_id_s: {}", std::string(item.cbs_id_s,sizeof(item.cbs_id_s)).c_str());
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "filler_3_s: {}", std::string(item.filler_3_s,sizeof(item.filler_3_s)).c_str());
-    print(item.item);
+    for(int i=0; i<24; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -955,7 +956,9 @@ void OMnetLogger::print(const answer_bi27_broadcasts_sent_item1_t& item) {
     loggerOMnetAPI->log(Level, "hhmmss_s: {}", std::string(item.hhmmss_s,sizeof(item.hhmmss_s)).c_str());
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item2);
+    for(int i=0; i<10; i++){
+        print(item.item2[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -990,7 +993,9 @@ void OMnetLogger::print(const answer_broker_item_t& item) {
     loggerOMnetAPI->log(Level, "cst_id_n: {}", item.cst_id_n);
     loggerOMnetAPI->log(Level, "usr_id_n: {}", item.usr_id_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -1046,7 +1051,9 @@ void OMnetLogger::print(const answer_combo_item_t& item) {
     loggerOMnetAPI->log(Level, "cbs_id_s: {}", std::string(item.cbs_id_s,sizeof(item.cbs_id_s)).c_str());
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "filler_3_s: {}", std::string(item.filler_3_s,sizeof(item.filler_3_s)).c_str());
-    print(item.item);
+    for(int i=0; i<24; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -1335,10 +1342,14 @@ void OMnetLogger::print(const answer_instrument_class_item_t& item) {
     loggerOMnetAPI->log(Level, "rnt_id_n: {}", item.rnt_id_n);
     loggerOMnetAPI->log(Level, "dec_in_premium_n: {}", item.dec_in_premium_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<12; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level, "dec_in_deliv_n: {}", item.dec_in_deliv_n);
     loggerOMnetAPI->log(Level, "items_block_n: {}", item.items_block_n);
-    print(item.block_size);
+    for(int i=0; i<4; i++){
+        print(item.block_size[i]);
+    }
     loggerOMnetAPI->log(Level, "cleared_dec_in_qty_n: {}", item.cleared_dec_in_qty_n);
     loggerOMnetAPI->log(Level, "virt_commodity_n: {}", item.virt_commodity_n);
     loggerOMnetAPI->log(Level, "dec_in_fixing_n: {}", item.dec_in_fixing_n);
@@ -2169,7 +2180,9 @@ void OMnetLogger::print(const answer_underlying_item_t& item) {
     loggerOMnetAPI->log(Level, "time_delivery_stop_s: {}", std::string(item.time_delivery_stop_s,sizeof(item.time_delivery_stop_s)).c_str());
     loggerOMnetAPI->log(Level, "sector_code_s: {}", std::string(item.sector_code_s,sizeof(item.sector_code_s)).c_str());
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.coupon);
+    for(int i=0; i<80; i++){
+        print(item.coupon[i]);
+    }
     loggerOMnetAPI->log(Level, "virtual_c: {}", item.virtual_c);
     loggerOMnetAPI->log(Level, "member_circ_numb_s: {}", std::string(item.member_circ_numb_s,sizeof(item.member_circ_numb_s)).c_str());
     loggerOMnetAPI->log(Level, "inv_scheme_c: {}", item.inv_scheme_c);
@@ -2223,7 +2236,9 @@ void OMnetLogger::print(const answer_underlying_adjustment_item_t& item) {
     loggerOMnetAPI->log(Level, "free_float_op_c: {}", item.free_float_op_c);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.delivery_change);
+    for(int i=0; i<20; i++){
+        print(item.delivery_change[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -2335,7 +2350,9 @@ void OMnetLogger::print(const da28_t& item) {
     loggerOMnetAPI->log(Level, "central_group_s: {}", std::string(item.central_group_s,sizeof(item.central_group_s)).c_str());
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<30; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -2599,10 +2616,14 @@ void OMnetLogger::print(const da10_da20_t& item) {
     loggerOMnetAPI->log(Level, "rnt_id_n: {}", item.rnt_id_n);
     loggerOMnetAPI->log(Level, "dec_in_premium_n: {}", item.dec_in_premium_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<12; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level, "dec_in_deliv_n: {}", item.dec_in_deliv_n);
     loggerOMnetAPI->log(Level, "items_block_n: {}", item.items_block_n);
-    print(item.block_size);
+    for(int i=0; i<4; i++){
+        print(item.block_size[i]);
+    }
     loggerOMnetAPI->log(Level, "cleared_dec_in_qty_n: {}", item.cleared_dec_in_qty_n);
     loggerOMnetAPI->log(Level, "virt_commodity_n: {}", item.virt_commodity_n);
     loggerOMnetAPI->log(Level, "dec_in_fixing_n: {}", item.dec_in_fixing_n);
@@ -3049,7 +3070,9 @@ void OMnetLogger::print(const da4_da19_t& item) {
     loggerOMnetAPI->log(Level, "time_delivery_stop_s: {}", std::string(item.time_delivery_stop_s,sizeof(item.time_delivery_stop_s)).c_str());
     loggerOMnetAPI->log(Level, "sector_code_s: {}", std::string(item.sector_code_s,sizeof(item.sector_code_s)).c_str());
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.coupon);
+    for(int i=0; i<80; i++){
+        print(item.coupon[i]);
+    }
     loggerOMnetAPI->log(Level, "virtual_c: {}", item.virtual_c);
     loggerOMnetAPI->log(Level, "member_circ_numb_s: {}", std::string(item.member_circ_numb_s,sizeof(item.member_circ_numb_s)).c_str());
     loggerOMnetAPI->log(Level, "inv_scheme_c: {}", item.inv_scheme_c);
@@ -3119,7 +3142,9 @@ void OMnetLogger::print(const aat_rg_connection_status_t& item) {
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
     print(item.participant);
     loggerOMnetAPI->log(Level, "acc_access_type_s: {}", std::string(item.acc_access_type_s,sizeof(item.acc_access_type_s)).c_str());
-    print(item.item);
+    for(int i=0; i<2250; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3164,7 +3189,9 @@ void OMnetLogger::print(const account_status_t& item) {
     print(item.account);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<201; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3216,7 +3243,9 @@ void OMnetLogger::print(const add_tm_combo_t& item) {
     print(item.series);
     loggerOMnetAPI->log(Level, "no_of_legs_n: {}", item.no_of_legs_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<4; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3305,7 +3334,9 @@ void OMnetLogger::print(const answer_account_ext_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<133; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3314,7 +3345,9 @@ void OMnetLogger::print(const answer_account_fee_type_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3331,7 +3364,9 @@ void OMnetLogger::print(const answer_account_type_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3340,7 +3375,9 @@ void OMnetLogger::print(const answer_account_type_rule_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3360,7 +3397,9 @@ void OMnetLogger::print(const answer_acc_access_type_t& item) {
     loggerOMnetAPI->log(Level, "modified_time_s: {}", std::string(item.modified_time_s,sizeof(item.modified_time_s)).c_str());
     loggerOMnetAPI->log(Level, "le_state_c: {}", item.le_state_c);
     loggerOMnetAPI->log(Level, "filler_3_s: {}", std::string(item.filler_3_s,sizeof(item.filler_3_s)).c_str());
-    print(item.item);
+    for(int i=0; i<900; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3372,7 +3411,9 @@ void OMnetLogger::print(const answer_api_delivery_t& item) {
     loggerOMnetAPI->log(Level, "sequence_first_i: {}", item.sequence_first_i);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<280; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3384,7 +3425,9 @@ void OMnetLogger::print(const answer_api_give_up_t& item) {
     loggerOMnetAPI->log(Level, "sequence_first_i: {}", item.sequence_first_i);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<300; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3404,7 +3447,9 @@ void OMnetLogger::print(const answer_authorized_report_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<200; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3416,7 +3461,9 @@ void OMnetLogger::print(const answer_average_price_trade_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3425,7 +3472,9 @@ void OMnetLogger::print(const answer_bi26_signals_sent_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3435,7 +3484,9 @@ void OMnetLogger::print(const answer_bi27_broadcasts_sent_t& item) {
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
-    print(item.item1);
+    for(int i=0; i<50; i++){
+        print(item.item1[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3444,7 +3495,9 @@ void OMnetLogger::print(const answer_bi73_signals_sent_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3453,7 +3506,9 @@ void OMnetLogger::print(const answer_bi7_signals_sent_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3473,7 +3528,9 @@ void OMnetLogger::print(const answer_broker_t& item) {
     loggerOMnetAPI->log(Level, "ex_customer_s: {}", std::string(item.ex_customer_s,sizeof(item.ex_customer_s)).c_str());
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<50; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3495,7 +3552,9 @@ void OMnetLogger::print(const answer_central_group_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3508,7 +3567,9 @@ void OMnetLogger::print(const answer_clearing_date_t& item) {
     loggerOMnetAPI->log(Level, "business_date_s: {}", std::string(item.business_date_s,sizeof(item.business_date_s)).c_str());
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<1500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3521,7 +3582,9 @@ void OMnetLogger::print(const answer_clearing_date_ext_t& item) {
     loggerOMnetAPI->log(Level, "business_date_s: {}", std::string(item.business_date_s,sizeof(item.business_date_s)).c_str());
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3532,7 +3595,9 @@ void OMnetLogger::print(const answer_closeout_log_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<799; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3550,7 +3615,9 @@ void OMnetLogger::print(const answer_combo_t& item) {
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3561,7 +3628,9 @@ void OMnetLogger::print(const answer_commission_t& item) {
     loggerOMnetAPI->log(Level, "send_receive_c: {}", item.send_receive_c);
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<760; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3570,7 +3639,9 @@ void OMnetLogger::print(const answer_conf_give_up_req_items_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<50; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3579,7 +3650,9 @@ void OMnetLogger::print(const answer_converted_series_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3589,7 +3662,9 @@ void OMnetLogger::print(const answer_cool_off_period_ended_t& item) {
     print(item.series);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3598,7 +3673,9 @@ void OMnetLogger::print(const answer_corp_action_da53_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3614,7 +3691,9 @@ void OMnetLogger::print(const answer_currency_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3623,7 +3702,9 @@ void OMnetLogger::print(const answer_currency_ranking_connections_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3632,7 +3713,9 @@ void OMnetLogger::print(const answer_deal_source_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3643,7 +3726,9 @@ void OMnetLogger::print(const answer_delivery_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3653,7 +3738,9 @@ void OMnetLogger::print(const answer_delta_limit_t& item) {
     print(item.series);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3697,7 +3784,9 @@ void OMnetLogger::print(const answer_error_msg_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3707,7 +3796,9 @@ void OMnetLogger::print(const answer_etpr_delta_limit_t& item) {
     print(item.series);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3716,7 +3807,9 @@ void OMnetLogger::print(const answer_exception_days_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3725,7 +3818,9 @@ void OMnetLogger::print(const answer_exchange_da24_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3734,7 +3829,9 @@ void OMnetLogger::print(const answer_exchange_rate_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3745,7 +3842,9 @@ void OMnetLogger::print(const answer_exercise_req_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<250; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3755,7 +3854,9 @@ void OMnetLogger::print(const answer_fixing_dates_t& item) {
     print(item.series);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<50; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3766,7 +3867,9 @@ void OMnetLogger::print(const answer_fixing_val_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3777,7 +3880,9 @@ void OMnetLogger::print(const answer_give_up_request_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<410; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3791,7 +3896,9 @@ void OMnetLogger::print(const answer_greeks_t& item) {
     loggerOMnetAPI->log(Level, "created_date_s: {}", std::string(item.created_date_s,sizeof(item.created_date_s)).c_str());
     loggerOMnetAPI->log(Level, "created_time_s: {}", std::string(item.created_time_s,sizeof(item.created_time_s)).c_str());
     loggerOMnetAPI->log(Level, "filler_6_s: {}", std::string(item.filler_6_s,sizeof(item.filler_6_s)).c_str());
-    print(item.item);
+    for(int i=0; i<1500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3800,7 +3907,9 @@ void OMnetLogger::print(const answer_haircut_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3817,7 +3926,9 @@ void OMnetLogger::print(const answer_instrument_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3826,7 +3937,9 @@ void OMnetLogger::print(const answer_instrument_class_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<145; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3835,7 +3948,9 @@ void OMnetLogger::print(const answer_instrument_group_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3844,7 +3959,9 @@ void OMnetLogger::print(const answer_instrument_status_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3854,7 +3971,9 @@ void OMnetLogger::print(const answer_limit_t& item) {
     print(item.series);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3887,7 +4006,9 @@ void OMnetLogger::print(const answer_list_ver_nrs_t& item) {
     loggerOMnetAPI->log(Level, "business_date_s: {}", std::string(item.business_date_s,sizeof(item.business_date_s)).c_str());
     loggerOMnetAPI->log(Level, "report_version_s: {}", std::string(item.report_version_s,sizeof(item.report_version_s)).c_str());
     loggerOMnetAPI->log(Level, "ascii_bin_c: {}", item.ascii_bin_c);
-    print(item.data_buffer_s);
+    for(int i=0; i<61440; i++){
+        print(item.data_buffer_s[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3898,7 +4019,9 @@ void OMnetLogger::print(const answer_manual_payments_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<250; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3925,7 +4048,9 @@ void OMnetLogger::print(const answer_margin_acc_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3939,7 +4064,9 @@ void OMnetLogger::print(const answer_margin_data_used_t& item) {
     loggerOMnetAPI->log(Level, "created_date_s: {}", std::string(item.created_date_s,sizeof(item.created_date_s)).c_str());
     loggerOMnetAPI->log(Level, "created_time_s: {}", std::string(item.created_time_s,sizeof(item.created_time_s)).c_str());
     loggerOMnetAPI->log(Level, "filler_6_s: {}", std::string(item.filler_6_s,sizeof(item.filler_6_s)).c_str());
-    print(item.item);
+    for(int i=0; i<600; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3953,7 +4080,9 @@ void OMnetLogger::print(const answer_margin_detail_t& item) {
     loggerOMnetAPI->log(Level, "created_date_s: {}", std::string(item.created_date_s,sizeof(item.created_date_s)).c_str());
     loggerOMnetAPI->log(Level, "created_time_s: {}", std::string(item.created_time_s,sizeof(item.created_time_s)).c_str());
     loggerOMnetAPI->log(Level, "filler_6_s: {}", std::string(item.filler_6_s,sizeof(item.filler_6_s)).c_str());
-    print(item.item);
+    for(int i=0; i<430; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3962,7 +4091,9 @@ void OMnetLogger::print(const answer_margin_ext_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3971,7 +4102,9 @@ void OMnetLogger::print(const answer_margin_mem_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3980,7 +4113,9 @@ void OMnetLogger::print(const answer_margin_pa_acc_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -3994,7 +4129,9 @@ void OMnetLogger::print(const answer_margin_prop_t& item) {
     loggerOMnetAPI->log(Level, "created_date_s: {}", std::string(item.created_date_s,sizeof(item.created_date_s)).c_str());
     loggerOMnetAPI->log(Level, "created_time_s: {}", std::string(item.created_time_s,sizeof(item.created_time_s)).c_str());
     loggerOMnetAPI->log(Level, "filler_6_s: {}", std::string(item.filler_6_s,sizeof(item.filler_6_s)).c_str());
-    print(item.item);
+    for(int i=0; i<400; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4032,7 +4169,9 @@ void OMnetLogger::print(const answer_margin_series_param_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4046,7 +4185,9 @@ void OMnetLogger::print(const answer_margin_series_param_ext_t& item) {
     loggerOMnetAPI->log(Level, "created_date_s: {}", std::string(item.created_date_s,sizeof(item.created_date_s)).c_str());
     loggerOMnetAPI->log(Level, "created_time_s: {}", std::string(item.created_time_s,sizeof(item.created_time_s)).c_str());
     loggerOMnetAPI->log(Level, "filler_6_s: {}", std::string(item.filler_6_s,sizeof(item.filler_6_s)).c_str());
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4055,7 +4196,9 @@ void OMnetLogger::print(const answer_margin_ulg_price_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<300; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4074,7 +4217,9 @@ void OMnetLogger::print(const answer_marg_sim_add_trade_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4083,7 +4228,9 @@ void OMnetLogger::print(const answer_market_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4092,7 +4239,9 @@ void OMnetLogger::print(const answer_member_obligation_da57_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4101,7 +4250,9 @@ void OMnetLogger::print(const answer_missing_delivery_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<280; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4110,7 +4261,9 @@ void OMnetLogger::print(const answer_missing_give_up_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<300; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4119,7 +4272,9 @@ void OMnetLogger::print(const answer_missing_trade_change_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4136,7 +4291,9 @@ void OMnetLogger::print(const answer_mm_protection_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4156,7 +4313,9 @@ void OMnetLogger::print(const answer_non_trading_days_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4165,7 +4324,9 @@ void OMnetLogger::print(const answer_non_trad_settl_days_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4176,7 +4337,9 @@ void OMnetLogger::print(const answer_open_interest_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4187,7 +4350,9 @@ void OMnetLogger::print(const answer_open_interest_ext_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4208,7 +4373,9 @@ void OMnetLogger::print(const answer_partition_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4219,7 +4386,9 @@ void OMnetLogger::print(const answer_paynote_info_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<250; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4230,7 +4399,9 @@ void OMnetLogger::print(const answer_position_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4253,7 +4424,9 @@ void OMnetLogger::print(const answer_prel_settlement_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
-    print(item.item);
+    for(int i=0; i<1500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4263,7 +4436,9 @@ void OMnetLogger::print(const answer_price_limit_trigger_t& item) {
     print(item.series);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4272,7 +4447,9 @@ void OMnetLogger::print(const answer_propagate_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4281,7 +4458,9 @@ void OMnetLogger::print(const answer_realtime_ulg_price_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<300; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4294,7 +4473,9 @@ void OMnetLogger::print(const answer_rectify_d_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4303,7 +4484,9 @@ void OMnetLogger::print(const answer_rectify_d_cont_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<255; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4312,7 +4495,9 @@ void OMnetLogger::print(const answer_rectify_ext_cont_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4326,7 +4511,9 @@ void OMnetLogger::print(const answer_rectify_t_t& item) {
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "instance_next_c: {}", item.instance_next_c);
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
-    print(item.item);
+    for(int i=0; i<400; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4335,7 +4522,9 @@ void OMnetLogger::print(const answer_report_nrs_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<351; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4344,7 +4533,9 @@ void OMnetLogger::print(const answer_report_ver_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<450; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4406,7 +4597,9 @@ void OMnetLogger::print(const answer_series_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<300; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4416,7 +4609,9 @@ void OMnetLogger::print(const answer_series_bo_t& item) {
     loggerOMnetAPI->log(Level, "date_trading_s: {}", std::string(item.date_trading_s,sizeof(item.date_trading_s)).c_str());
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<330; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4425,7 +4620,9 @@ void OMnetLogger::print(const answer_state_type_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4438,7 +4635,9 @@ void OMnetLogger::print(const answer_tot_equil_prices_t& item) {
     print(item.series_next);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<1230; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4450,7 +4649,9 @@ void OMnetLogger::print(const answer_tot_ob_t& item) {
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "bid_or_ask_c: {}", item.bid_or_ask_c);
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
-    print(item.item);
+    for(int i=0; i<994; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4461,7 +4662,9 @@ void OMnetLogger::print(const answer_tot_order_t& item) {
     loggerOMnetAPI->log(Level, "order_index_u: {}", item.order_index_u);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<283; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4480,7 +4683,9 @@ void OMnetLogger::print(const answer_trade_report_types_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<200; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4489,7 +4694,9 @@ void OMnetLogger::print(const answer_trade_statistics_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4498,7 +4705,9 @@ void OMnetLogger::print(const answer_trading_state_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4509,7 +4718,9 @@ void OMnetLogger::print(const answer_trd_report_t& item) {
     loggerOMnetAPI->log(Level, "order_index_u: {}", item.order_index_u);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<300; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4521,7 +4732,9 @@ void OMnetLogger::print(const answer_trd_report_party_t& item) {
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "bid_or_ask_c: {}", item.bid_or_ask_c);
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
-    print(item.item);
+    for(int i=0; i<300; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4530,7 +4743,9 @@ void OMnetLogger::print(const answer_underlying_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<50; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4539,7 +4754,9 @@ void OMnetLogger::print(const answer_underlying_adjustment_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4550,7 +4767,9 @@ void OMnetLogger::print(const answer_updated_pos_info_t& item) {
     print(item.partition_high);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<888; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4581,7 +4800,9 @@ void OMnetLogger::print(const answer_user_type_info_t& item) {
     loggerOMnetAPI->log(Level, "trader_authorization_c: {}", item.trader_authorization_c);
     loggerOMnetAPI->log(Level, "hide_firm_order_trade_c: {}", item.hide_firm_order_trade_c);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4590,7 +4811,9 @@ void OMnetLogger::print(const answer_valuation_group_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4608,7 +4831,9 @@ void OMnetLogger::print(const average_price_trade_t& item) {
     print(item.series);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4724,7 +4949,9 @@ void OMnetLogger::print(const block_order_response_t& item) {
     print(item.order_number_u);
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "filler_3_s: {}", std::string(item.filler_3_s,sizeof(item.filler_3_s)).c_str());
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4736,7 +4963,9 @@ void OMnetLogger::print(const block_order_trans_t& item) {
     loggerOMnetAPI->log(Level, "exchange_info_s: {}", std::string(item.exchange_info_s,sizeof(item.exchange_info_s)).c_str());
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "filler_3_s: {}", std::string(item.filler_3_s,sizeof(item.filler_3_s)).c_str());
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4749,7 +4978,9 @@ void OMnetLogger::print(const block_order_trans_p_t& item) {
     loggerOMnetAPI->log(Level, "exchange_info_s: {}", std::string(item.exchange_info_s,sizeof(item.exchange_info_s)).c_str());
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "filler_3_s: {}", std::string(item.filler_3_s,sizeof(item.filler_3_s)).c_str());
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4763,7 +4994,9 @@ void OMnetLogger::print(const block_price_trans_t& item) {
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "stp_key_i: {}", item.stp_key_i);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<14; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4778,7 +5011,9 @@ void OMnetLogger::print(const block_price_trans_p_t& item) {
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "stp_key_i: {}", item.stp_key_i);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<14; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -4897,7 +5132,9 @@ void OMnetLogger::print(const clearing_message_t& item) {
     loggerOMnetAPI->log(Level, "country_c: {}", item.country_c);
     loggerOMnetAPI->log(Level, "market_c: {}", item.market_c);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<10; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5418,7 +5655,9 @@ void OMnetLogger::print(const combo_series_multi_update_bu1005_t& item) {
     print(item.broadcast_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<10; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5429,7 +5668,9 @@ void OMnetLogger::print(const combo_trade_report_trans_t& item) {
     loggerOMnetAPI->log(Level, "ext_t_state_c: {}", item.ext_t_state_c);
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<6; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5470,7 +5711,9 @@ void OMnetLogger::print(const confirm_give_up_request_t& item) {
     loggerOMnetAPI->log(Level, "give_up_number_i: {}", item.give_up_number_i);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<50; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5520,7 +5763,9 @@ void OMnetLogger::print(const corp_action_update_bu53_t& item) {
     print(item.broadcast_type);
     loggerOMnetAPI->log(Level, "chg_type_n: {}", item.chg_type_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<50; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5559,7 +5804,9 @@ void OMnetLogger::print(const create_acc_access_type_t& item) {
     loggerOMnetAPI->log(Level, "desc_long_s: {}", std::string(item.desc_long_s,sizeof(item.desc_long_s)).c_str());
     loggerOMnetAPI->log(Level, "allow_all_account_i: {}", item.allow_all_account_i);
     loggerOMnetAPI->log(Level, "version_i: {}", item.version_i);
-    print(item.item);
+    for(int i=0; i<2600; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5571,7 +5818,9 @@ void OMnetLogger::print(const create_currency_ranking_connections_t& item) {
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
     print(item.participant);
     loggerOMnetAPI->log(Level, "currency_ranking_id_s: {}", std::string(item.currency_ranking_id_s,sizeof(item.currency_ranking_id_s)).c_str());
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5591,7 +5840,9 @@ void OMnetLogger::print(const currency_ranking_t& item) {
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
     print(item.key);
-    print(item.item);
+    for(int i=0; i<1000; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5659,7 +5910,9 @@ void OMnetLogger::print(const delete_currency_ranking_connections_t& item) {
     print(item.series);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<500; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5702,7 +5955,9 @@ void OMnetLogger::print(const deposit_withdraw_transfer_collateral_txn_t& item) 
     print(item.transaction_type);
     print(item.series);
     loggerOMnetAPI->log(Level, "filler_4_s: {}", std::string(item.filler_4_s,sizeof(item.filler_4_s)).c_str());
-    print(item.item);
+    for(int i=0; i<2; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5771,7 +6026,9 @@ void OMnetLogger::print(const directed_quote_request_ack_t& item) {
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "quote_request_status_c: {}", item.quote_request_status_c);
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5783,7 +6040,9 @@ void OMnetLogger::print(const directed_quote_request_trans_t& item) {
     loggerOMnetAPI->log(Level, "bid_or_ask_c: {}", item.bid_or_ask_c);
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<25; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5796,7 +6055,9 @@ void OMnetLogger::print(const directed_quote_request_trans_p_t& item) {
     loggerOMnetAPI->log(Level, "bid_or_ask_c: {}", item.bid_or_ask_c);
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<25; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5829,7 +6090,9 @@ void OMnetLogger::print(const equil_price_update_t& item) {
     print(item.broadcast_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<27; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5838,7 +6101,9 @@ void OMnetLogger::print(const etpr_delta_limit_change_t& item) {
     print(item.broadcast_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<40; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -5847,7 +6112,9 @@ void OMnetLogger::print(const etpr_limit_change_t& item) {
     print(item.broadcast_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<40; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -6087,7 +6354,9 @@ void OMnetLogger::print(const instrument_status_info_t& item) {
     print(item.broadcast_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<9; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -6124,7 +6393,9 @@ void OMnetLogger::print(const limit_change_t& item) {
     print(item.broadcast_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<50; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -6546,7 +6817,9 @@ void OMnetLogger::print(const mass_quote_trans_t& item) {
     print(item.stp_key);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<36; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -6559,7 +6832,9 @@ void OMnetLogger::print(const mass_quote_update_t& item) {
     loggerOMnetAPI->log(Level, "sequence_number_u: {}", item.sequence_number_u);
     loggerOMnetAPI->log(Level, "stp_key_i: {}", item.stp_key_i);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<36; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -6590,7 +6865,9 @@ void OMnetLogger::print(const message_information_t& item) {
     loggerOMnetAPI->log(Level,"{");
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<10; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -6637,7 +6914,9 @@ void OMnetLogger::print(const modify_acc_access_type_t& item) {
     loggerOMnetAPI->log(Level, "desc_long_s: {}", std::string(item.desc_long_s,sizeof(item.desc_long_s)).c_str());
     loggerOMnetAPI->log(Level, "allow_all_account_i: {}", item.allow_all_account_i);
     loggerOMnetAPI->log(Level, "version_i: {}", item.version_i);
-    print(item.item);
+    for(int i=0; i<2600; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -6649,7 +6928,9 @@ void OMnetLogger::print(const modify_commission_t& item) {
     loggerOMnetAPI->log(Level, "send_receive_c: {}", item.send_receive_c);
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<760; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -7570,7 +7851,9 @@ void OMnetLogger::print(const position_closeout_t& item) {
     print(item.series);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<950; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -7579,7 +7862,9 @@ void OMnetLogger::print(const position_closeout_status_t& item) {
     print(item.transaction_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<950; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -8075,7 +8360,9 @@ void OMnetLogger::print(const query_collateral_transaction_t& item) {
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "collateral_transaction_type_c: {}", item.collateral_transaction_type_c);
     loggerOMnetAPI->log(Level, "filler_1_s: {}", item.filler_1_s);
-    print(item.item);
+    for(int i=0; i<20; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -9057,7 +9344,9 @@ void OMnetLogger::print(const query_settlement_instruction_t& item) {
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<20; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -9263,7 +9552,9 @@ void OMnetLogger::print(const rectify_deal_t& item) {
     print(item.other_series);
     loggerOMnetAPI->log(Level, "deal_price_i: {}", item.deal_price_i);
     loggerOMnetAPI->log(Level, "deal_number_i: {}", item.deal_number_i);
-    print(item.item);
+    for(int i=0; i<255; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -9284,7 +9575,9 @@ void OMnetLogger::print(const rectify_trade_t& item) {
     loggerOMnetAPI->log(Level, "trade_number_i: {}", item.trade_number_i);
     loggerOMnetAPI->log(Level, "items_c: {}", item.items_c);
     loggerOMnetAPI->log(Level, "filler_3_s: {}", std::string(item.filler_3_s,sizeof(item.filler_3_s)).c_str());
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -9617,7 +9910,9 @@ void OMnetLogger::print(const series_bo_multi_update_bu1009_t& item) {
     print(item.broadcast_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<7; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -9635,7 +9930,9 @@ void OMnetLogger::print(const series_multi_update_bu1002_t& item) {
     print(item.broadcast_type);
     loggerOMnetAPI->log(Level, "segment_number_n: {}", item.segment_number_n);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
-    print(item.item);
+    for(int i=0; i<6; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -9670,7 +9967,9 @@ void OMnetLogger::print(const settle_price_update_t& item) {
     print(item.broadcast_type);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<30; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
@@ -9680,7 +9979,9 @@ void OMnetLogger::print(const set_delta_limit_trans_t& item) {
     print(item.series);
     loggerOMnetAPI->log(Level, "items_n: {}", item.items_n);
     loggerOMnetAPI->log(Level, "filler_2_s: {}", std::string(item.filler_2_s,sizeof(item.filler_2_s)).c_str());
-    print(item.item);
+    for(int i=0; i<100; i++){
+        print(item.item[i]);
+    }
     loggerOMnetAPI->log(Level,"}");
 }
 
