@@ -55,7 +55,6 @@ def generate_cpp_code(filename):
                     # cpp_file.write(f'    std::cout << "{field_name}: " << ptr->{field_name} << std::endl;\n')
                 cpp_file.write(r'    loggerOMnetAPI->log(Level,"}");')
                 cpp_file.write("\n}\n\n")
-                # print(type_list)
 
 
 filename = 'omex_sgx.h'
