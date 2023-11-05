@@ -57,7 +57,7 @@ def generate_cpp_code(filename):
                 cpp_file.write("\n}\n\n")
 
 
-filename = 'omex_sgx.h'
+filename = 'resource/omex_sgx.h'
 
 generate_cpp_code(filename)
 print("Done!")
